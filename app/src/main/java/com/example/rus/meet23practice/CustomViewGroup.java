@@ -83,7 +83,7 @@ public class CustomViewGroup extends ViewGroup {
         int maxHeight = 0;
         int maxWidth = 0;
         int childState = 0;
-        int mTopWidth = 0;
+        int mTopHeight = 0;
         int columnCount = 0;
 
         // Iterate through all children, measuring them and computing our dimensions
@@ -97,9 +97,9 @@ public class CustomViewGroup extends ViewGroup {
             // Measure the child.
             measureChild(child, widthMeasureSpec, heightMeasureSpec);
             maxHeight += Math.max(maxHeight, child.getMeasuredHeight());
-            mTopWidth += child.getMeasuredHeight();
+            mTopHeight += child.getMeasuredHeight();
 
-            if ((mTopWidth / deviceHeight) > columnCount) {
+            if ((mTopHeight / deviceHeight) > columnCount) {
                 maxWidth += child.getMeasuredWidth();
                 columnCount++;
             } else {
