@@ -61,7 +61,7 @@ public class CustomViewGroup extends ViewGroup {
             child.measure(MeasureSpec.makeMeasureSpec(childWidth, MeasureSpec.AT_MOST), MeasureSpec.makeMeasureSpec(childHeight, MeasureSpec.AT_MOST));
             curWidth = child.getMeasuredWidth();
             curHeight = child.getMeasuredHeight();
-            //wrap is reach to the end
+            //wrap if reach to the end
             if (curTop + curHeight >= childBottom) {
                 curTop = childTop;
                 curLeft += maxWidth;
@@ -69,7 +69,7 @@ public class CustomViewGroup extends ViewGroup {
             }
             //do the layout
             child.layout(curLeft, curTop, curLeft + curWidth, curTop + curHeight);
-            //store the max height
+            //store the max width
             if (maxWidth < curWidth)
                 maxWidth = curWidth;
             curTop += curHeight;
